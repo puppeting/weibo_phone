@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/bg_color"
+        tools:context=".ui.mine.AppStoreActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/dimens10">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:clickable="true"
+                android:background="@mipmap/icon_back_black" />
+
+            <TextView
+                android:id="@+id/tv_yunpan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(v)->presenterClick.onClick(v)}"
+                android:paddingBottom="@dimen/dimen6dp"
+                android:paddingLeft="@dimen/dimen6dp"
+                android:paddingRight="@dimen/dimen6dp"
+                android:paddingTop="@dimen/dimen6dp"
+                android:text="平台工具"
+                android:textColor="@{data.colorType==1? @color/color_333: @color/color_888}"
+                android:textSize="@{data.colorType==1? @dimen/sp_s8: @dimen/sp_14}" />
+
+            <TextView
+                android:id="@+id/tv_bendi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:onClick="@{(v)->presenterClick.onClick(v)}"
+                android:paddingBottom="@dimen/dimen6dp"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingTop="@dimen/dimen6dp"
+                android:text="增值服务"
+                android:textColor="@{data.colorType==2? @color/color_333: @color/color_888}"
+                android:textSize="@{data.colorType==2? @dimen/sp_s8: @dimen/sp_14}" />
+
+
+        </LinearLayout>
+
+        <com.flyco.roundview.RoundLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_margin="@dimen/sp_12"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius="22dp"
+            app:rv_strokeColor="@color/white"
+            app:rv_strokeWidth="1dp">
+
+
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:background="@null"
+                android:drawableRight="@mipmap/search"
+                android:hint="请输入关键字"
+                android:paddingTop="@dimen/dp_4"
+                android:paddingBottom="4dp"
+                android:paddingRight="@dimen/dimen_15"
+                android:paddingLeft="@dimen/dimen_15"
+                android:textColorHint="#999"
+                android:textSize="@dimen/sp_12" />
+        </com.flyco.roundview.RoundLinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            >
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyview"
+                android:layout_margin="@dimen/dimens10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <data>
+
+        <import type="com.blankj.utilcode.util.StringUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.pzbao.microphoto.bean.BaseTypeBean" />
+
+        <variable
+            name="presenterClick"
+            type="com.pzbao.microphoto.config.PresenterClick" />
+    </data>
+</layout>

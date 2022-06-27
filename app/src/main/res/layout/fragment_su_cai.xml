@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.pzbao.microphoto.bean.BaseTypeBean" />
+
+        <import type="com.blankj.utilcode.util.StringUtils" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="presenterClick"
+            type="com.pzbao.microphoto.config.PresenterClick" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical"
+        tools:context=".ui.sucai.SuCaiFragment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_color"
+            android:orientation="vertical"
+             >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimens10">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+
+                   />
+
+                <TextView
+                    android:id="@+id/tv_yunpan"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                     android:paddingLeft="@dimen/dimen6dp"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:paddingRight="@dimen/dimen6dp"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:onClick="@{(v)->presenterClick.onClick(v)}"
+                    android:text="云盘"
+                    android:textColor="@{data.colorType==1? @color/color_333: @color/color_888}"
+                    android:gravity="center"
+                    android:textSize="@{data.colorType==1? @dimen/sp_s8: @dimen/sp_14}"
+                     />
+
+                <TextView
+                    android:id="@+id/tv_bendi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(v)->presenterClick.onClick(v)}"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:gravity="center"
+                    android:textSize="@{data.colorType==2? @dimen/sp_s8: @dimen/sp_14}"
+                    android:textColor="@{data.colorType==2? @color/color_333: @color/color_888}"
+                    android:text="本地" />
+
+                <TextView
+                    android:id="@+id/tv_xiangce"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="@{(v)->presenterClick.onClick(v)}"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:gravity="center"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:textSize="@{data.colorType==3? @dimen/sp_s8: @dimen/sp_14}"
+                    android:textColor="@{data.colorType==3? @color/color_333: @color/color_888}"
+                    android:text="相册" />
+
+                <TextView
+                    android:id="@+id/chip_apply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimens10"
+                    android:background="@drawable/shape_login"
+                    android:drawableLeft="@mipmap/daoru_bai"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->presenterClick.onClick(v)}"
+                    android:paddingLeft="@dimen/sp_14"
+                    android:paddingTop="@dimen/dimens4"
+                    android:paddingRight="@dimen/sp_14"
+                    android:paddingBottom="@dimen/dimens4"
+                    android:text=" 导入"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dimen_15"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="@dimen/dimen_15"
+                android:orientation="horizontal">
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                     app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="22dp"
+                    app:rv_strokeColor="@color/white"
+                    app:rv_strokeWidth="1dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@mipmap/xiala"
+                        android:paddingLeft="@dimen/dimen_15"
+                        android:paddingTop="@dimen/dimen6dp"
+                        android:paddingRight="@dimen/dimen_15"
+                        android:paddingBottom="@dimen/dimen6dp"
+                        android:text=" 全部  "
+                        android:textSize="12sp"
+                        android:textColor="@color/color_333" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@null"
+                        android:drawableRight="@mipmap/search"
+                        android:hint="请输入关键字"
+                        android:padding="@dimen/dp_4"
+                        android:textColorHint="#868686"
+                        android:textSize="@dimen/sp_12" />
+                </com.flyco.roundview.RoundLinearLayout>
+
+                <androidx.constraintlayout.utils.widget.ImageFilterView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimens10"
+                    android:background="@mipmap/paixu"
+                    android:gravity="center_vertical"
+                    android:onClick="@{(v)->presenterClick.onClick(v)}"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyview"
+                android:layout_margin="@dimen/dimens10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyview2"
+                android:layout_margin="@dimen/dimens10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageView
+            android:layout_width="@dimen/dimen50dp"
+            android:layout_height="@dimen/dimen50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@mipmap/shangla" />
+    </RelativeLayout>
+</layout>

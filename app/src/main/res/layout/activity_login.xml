@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.pzbao.microphoto.bean.BaseTypeBean" />
+        <import type="com.blankj.utilcode.util.StringUtils"/>
+        <import type="android.view.View" />
+
+        <variable
+            name="presenterClick"
+            type="com.pzbao.microphoto.config.PresenterClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.LoginActivity"
+        android:background="@color/bg_color"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_head"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="80dp"
+            android:background="@mipmap/touxiang" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:textColor="@color/color_333"
+            android:textSize="16sp"
+            android:text="请登陆您的身份信息" />
+
+        <com.flyco.roundview.RoundLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            app:rv_strokeColor="@color/color_f1f1f1"
+            app:rv_strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="MissingClass">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableLeft="@mipmap/icon_phone"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="  手机号"
+                    android:textColor="@color/color_333" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/down_jczt"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="5dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginRight="@dimen/dimens10"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textSize="@dimen/sp_14"
+                    android:hint="请输入手机号"
+                    tools:text="请输入手机号" />
+            </LinearLayout>
+        </com.flyco.roundview.RoundLinearLayout>
+
+        <com.flyco.roundview.RoundLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{data.dataType==2? View.VISIBLE: View.GONE}"
+            app:rv_backgroundColor="@color/white"
+            app:rv_cornerRadius="10dp"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginRight="60dp"
+            app:rv_strokeColor="@color/color_f1f1f1"
+            app:rv_strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="MissingClass">
+
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/et_code"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingLeft="10dp"
+                    android:paddingEnd="8dp"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginBottom="2dp"
+                    android:layout_marginLeft="@dimen/dimens10"
+                    android:singleLine="true"
+                    android:text=""
+                    android:textSize="@dimen/sp_14"
+                    android:hint="请输入验证码"
+                    tools:text="请输入验证码" />
+                <TextView
+                    android:layout_width="1dp"
+                    android:layout_height="@dimen/margin_25"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:background="#ddd"
+                    android:textSize="@dimen/sp_14"
+                    android:paddingRight="@dimen/dp_4"
+                    android:textColor="@color/color_333" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text=" 重新获取56s"
+                    android:textSize="@dimen/sp_14"
+                    android:paddingRight="@dimen/dp_4"
+                    android:textColor="@color/color_333" />
+            </LinearLayout>
+        </com.flyco.roundview.RoundLinearLayout>
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="@{data.dataType==2? @string/string_login: @string/string_get_code}"
+            android:onClick="@{(v)->presenterClick.onClick(v)}"
+            android:background="@drawable/shape_login"
+            android:layout_marginRight="80dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            tools:ignore="MissingClass">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_phone"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/icon_yes"
+                android:textColor="@color/color_333" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_xieyi"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                 android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:textSize="10sp"
+                android:singleLine="true"
+                android:text="阅读并同意《用户协议》" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/icon_phone"
+                android:gravity="center_vertical"
+                android:background="@mipmap/icon_yes"
+                android:textColor="@color/color_333" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                 android:gravity="center_vertical"
+                android:paddingStart="8dp"
+                android:textSize="10sp"
+                android:singleLine="true"
+                android:text="阅读并同意《版权免责协议》" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_ddd"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/shape_lvse"
+            android:layout_marginLeft="108dp"
+            android:layout_marginRight="108dp"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="  登录"
+                android:layout_gravity="center_horizontal"
+                android:drawableLeft="@mipmap/icon_weichat"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

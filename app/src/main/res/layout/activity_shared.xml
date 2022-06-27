@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/shared_color"
+    tools:context=".ui.mine.SharedActivity">
+    <RelativeLayout
+        android:id="@+id/rl_bg"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:background="@mipmap/sss"
+        >
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="@dimen/dimen_15"
+            android:background="@mipmap/icon_back_white"
+            />
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/bg_cicle">
+            <ImageView
+                android:id="@+id/iv_erweima"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                android:layout_centerInParent="true"
+                android:background="@mipmap/erweima"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/dimen_10sp"
+                android:text="你想要的功能全都有！"
+                android:layout_below="@+id/iv_erweima"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/dimen60dp"
+                />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_xiangce"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rl_bg"
+        android:layout_centerInParent="true"
+        android:background="@drawable/shape_login_bai"
+        android:gravity="center"
+        android:text="保存到相册"
+        android:textColor="#DFBDFF"
+        android:textSize="@dimen/sp_14"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/rl_bg"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/dimen60dp"
+        android:gravity="center|left"
+        android:padding="@dimen/dimen_30dp"
+        android:text="提示：\n1，分享成功后可赚取微播，微播积分可用来开启相关服务，或者用于再次购买设置时进行折现。
+\n2，积分不可单独购买，分享越多收获越多。分享链接有购买记录的获得200%当次积分加成。
+\n3，积分榜前2000人可以申请产品\r\n服务内测资格和下一代产品的优先购买权。
+"
+        android:textColor="#D2E2FF"
+        android:textSize="@dimen/sp_12"
+        android:textStyle="bold" />
+</RelativeLayout>

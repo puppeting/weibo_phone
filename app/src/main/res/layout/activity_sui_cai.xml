@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.pzbao.microphoto.bean.BaseTypeBean" />
+        <import type="com.blankj.utilcode.util.StringUtils"/>
+        <import type="android.view.View" />
+
+        <variable
+            name="presenterClick"
+            type="com.pzbao.microphoto.config.PresenterClick" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        tools:context=".ui.home.SuiCaiActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimens10">
+
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:onClick="@{(v)->presenterClick.onClick(v)}"
+                    android:background="@mipmap/icon_back_black" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/beijing_pre"
+                    android:paddingLeft="@dimen/sp_12"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:paddingRight="@dimen/dimen6dp"
+                     android:paddingBottom="@dimen/dimen6dp"
+                    android:text="背景"
+
+                    android:gravity="center"
+                    android:textColor="#3E71CC"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/moban_no"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:text=" 模板" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/tietu_no"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:text=" 贴图" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:drawableLeft="@mipmap/huazi_no"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:text=" 花字" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:orientation="horizontal">
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                     app:rv_cornerRadius="15dp"
+                    app:rv_strokeColor="@color/white"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_strokeWidth="1dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@mipmap/xiala"
+                        android:paddingLeft="@dimen/dimen_15"
+                        android:paddingTop="@dimen/dimen6dp"
+                        android:paddingRight="@dimen/dimen_15"
+                        android:paddingBottom="@dimen/dimen6dp"
+                        android:text=" 全部  "
+                        android:textSize="@dimen/sp_12"
+                        android:textColor="@color/color_333" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@null"
+                        android:hint="XXX直播间"
+                        android:padding="@dimen/dp_4"
+                        android:layout_marginRight="@dimen/dimens4"
+                        android:textColorHint="#999"
+                        android:drawableRight="@mipmap/search"
+                        android:textSize="@dimen/sp_12" />
+                </com.flyco.roundview.RoundLinearLayout>
+
+                <TextView
+                    android:id="@+id/chip_apply"
+                    android:layout_width="80dp"
+                    android:layout_height="@dimen/dimen_30dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dimens10"
+                    android:background="@drawable/shape_login"
+                    android:gravity="center"
+                    android:textSize="@dimen/sp_12"
+                    android:onClick="@{(v)->presenterClick.onClick(v)}"
+                     android:text="个性市场"
+                    android:textColor="@color/white" />
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyview"
+                android:scrollbars="none"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="@dimen/dimens10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/dimen50dp"
+            android:layout_height="@dimen/dimen50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@mipmap/shangla" />
+    </RelativeLayout>
+</layout>

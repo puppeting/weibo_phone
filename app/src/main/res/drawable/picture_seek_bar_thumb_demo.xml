@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+
+    >
+    <item>
+        <shape android:shape="oval">
+            <!-- solid表示远的填充色 -->
+
+            <solid android:color="#00A0E9" />
+            <!-- stroke则代表远的边框线 -->
+            <stroke
+                android:width="7dp"
+                android:color="#ccc" />
+            <!-- size控制高宽 -->
+            <size
+                android:width="26dp"
+                android:height="26dp" />
+        </shape>
+    </item>
+    <item
+        android:left="0.4dp"
+        android:right="0.4dp"
+        android:bottom="0.4dp"
+        android:top="0.4dp"
+        >
+        <shape android:shape="oval">
+            <!-- solid表示远的填充色 -->
+
+            <solid android:color="#00A0E9" />
+            <!-- stroke则代表远的边框线 -->
+            <stroke
+                android:width="7dp"
+                android:color="@color/white" />
+            <!-- size控制高宽 -->
+            <size
+                android:width="26dp"
+                android:height="26dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.pzbao.microphoto.bean.BaseTypeBean" />
+        <import type="com.blankj.utilcode.util.StringUtils"/>
+        <import type="android.view.View" />
+
+        <variable
+            name="presenterClick"
+            type="com.pzbao.microphoto.config.PresenterClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_color"
+        android:orientation="vertical"
+        tools:context=".ui.home.GeXingActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/dimens10">
+
+
+                <ImageView
+                    android:id="@+id/iv_back"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:onClick="@{(v)->presenterClick.onClick(v)}"
+                    android:background="@mipmap/icon_back_black" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dimen6dp"
+                    android:background="@mipmap/yingshi" />
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    app:rv_cornerRadius="16dp"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_strokeColor="@color/white"
+                    app:rv_strokeWidth="1dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:drawableRight="@mipmap/xiala"
+                        android:paddingBottom="@dimen/dimen6dp"
+                        android:paddingLeft="@dimen/dimen_15"
+                        android:paddingRight="@dimen/dimen_15"
+                        android:paddingTop="@dimen/dimen6dp"
+                        android:text=" 全部  "
+                        android:textColor="@color/color_333" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/et_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="32dp"
+                        android:background="@null"
+                        android:hint="XXX直播间"
+                        android:padding="@dimen/dp_4"
+                        android:textColorHint="#999"
+                        android:textSize="@dimen/sp_12" />
+                </com.flyco.roundview.RoundLinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/dimens10">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/shape_dangqian"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:text="花字"
+                    android:textColor="#2F58A1" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:text="相册"
+                    android:textColor="@color/color_666" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:text="LOGO"
+                    android:textColor="@color/color_666" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:text="特效"
+                    android:textColor="@color/color_666" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/dimen6dp"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:text="片头"
+                    android:textColor="@color/color_666" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:padding="@dimen/dimens10"
+            android:layout_weight="1"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="@color/color_ddd"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_margin="@dimen/dimens10">
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/shape_circle_zi"
+                android:text="1"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen6dp"
+                android:paddingLeft="@dimen/dimen_15"
+                android:paddingRight="@dimen/dimens10"
+                android:paddingTop="@dimen/dimen6dp"
+                android:text="选择模板   "
+                android:textSize="@dimen/sp_12"
+                android:drawableRight="@mipmap/zi_you_jian"
+                android:textColor="@color/color_zi" />
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/shape_circle_hui"
+                android:text="2"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen6dp"
+                android:paddingLeft="@dimen/dimens10"
+                android:paddingRight="@dimen/dimens10"
+                android:paddingTop="@dimen/dimen6dp"
+                android:text="设置参数   "
+                android:textSize="@dimen/sp_12"
+                android:drawableRight="@mipmap/icon_you_hui"
+                android:textColor="@color/color_888" />
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/shape_circle_hui"
+                android:text="3"
+                android:gravity="center"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/dimen6dp"
+                android:paddingLeft="@dimen/dimens10"
+                android:paddingRight="@dimen/dimens10"
+                android:paddingTop="@dimen/dimen6dp"
+                android:text="实时生成   "
+                android:textSize="@dimen/sp_12"
+                 android:textColor="@color/color_888" />
+        </LinearLayout>
+    </LinearLayout>
+</layout>

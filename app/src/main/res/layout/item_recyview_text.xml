@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_margin="@dimen/dimens10"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+
+            >
+            <ImageView
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/shape_hui_fang" />
+
+            <ImageView
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/suo" />
+            <TextView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:text="3"
+                android:gravity="center"
+                android:background="@drawable/shape_huangdian"
+                android:textColor="@color/white"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/dimens4"
+                android:textSize="@dimen/dimens10" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="服务名称"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/dimens10" />
+    </LinearLayout>
+</LinearLayout>

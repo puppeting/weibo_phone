@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@android:id/background"> <!--最底层：进度条背景颜色-->
+        <shape>
+            <corners android:radius="5dp"/>
+            <solid android:color="@color/seekbar_color"/>
+        </shape>
+    </item>
+
+    <item android:id="@android:id/secondaryProgress"> <!--中间层：滑块颜色: 若另设置样式，则被覆盖-->
+        <clip> <!--剪载图片显示-->
+            <shape
+                >
+                <corners android:radius="5dp"/>
+                <solid android:color="@color/color_lan" />
+<!--                <gradient-->
+<!--                    android:startColor="@color/color_lan"-->
+<!--                    android:endColor="@color/color_lan"-->
+<!--                    />-->
+
+<!--                <corners android:topLeftRadius="5dp"-->
+<!--                    android:topRightRadius="5dp"-->
+<!--                    android:bottomLeftRadius="5dp"-->
+<!--                    android:bottomRightRadius="5dp"/>-->
+<!--                <stroke android:color="@color/white" android:width="2dp" />-->
+            </shape>
+        </clip>
+    </item>
+
+    <item android:id="@android:id/progress"> <!--最上层：进度条颜色: 这里使用渐变色-->
+        <clip>
+            <shape>
+                <corners android:radius="5dp"/>
+                <!--angle：0从左到右，90表示从下到上，数值为45的整数倍；-->
+                <gradient
+                    android:angle="0"
+                    android:startColor="@color/color_lan"
+                    android:endColor="@color/color_lan"/>
+            </shape>
+        </clip>
+    </item>
+</layer-list>

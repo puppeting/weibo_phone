@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="presenterClick"
+            type="com.pzbao.microphoto.config.PresenterClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/bg_color"
+        tools:context=".ui.sucai.DaoRuActivity">
+
+        <include             android:id="@+id/action_bar_custom"
+            layout="@layout/action_bar_custom3" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens10"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:text="  Wifi导入"
+                    android:textSize="@dimen/sp_14"
+                    android:drawableLeft="@mipmap/zhankai"
+                    android:textColor="@color/color_lan" />
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimen6dp"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="18dp"
+                    app:rv_strokeColor="@color/white"
+                    android:layout_margin="@dimen/dimens10"
+                    app:rv_strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens10"
+                            android:text="一、确认管理端设置与本设备在同一局域网，即"
+                            android:textSize="@dimen/sp_12"
+                            android:textColor="@color/color_333" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens10"
+                            android:text="  Wifi名称"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp_14"
+                            android:drawableLeft="@mipmap/wifi"
+                            android:textColor="@color/color_333" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens10"
+                            android:text="二、在电脑或者移动设备地址栏输入以下地址即可管理文件："
+                            android:textSize="@dimen/sp_12"
+                            android:textColor="@color/color_333" />
+
+                        <ImageView
+                            android:layout_width="300dp"
+                            android:layout_height="200dp"
+                            android:layout_margin="@dimen/dimens10"
+                            android:text="  Wifi名称"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp_14"
+                            android:background="@mipmap/zhanwei"
+                            android:textColor="@color/color_333" />
+                    </LinearLayout>
+                </com.flyco.roundview.RoundLinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens10"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:text="  微信导入"
+                    android:textSize="@dimen/sp_14"
+                    android:drawableLeft="@mipmap/zhankai"
+                    android:textColor="@color/color_lan" />
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimen6dp"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="18dp"
+                    app:rv_strokeColor="@color/white"
+                    android:layout_margin="@dimen/dimens10"
+                    app:rv_strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens10"
+                            android:text="请用微信扫描下方二维码导入："
+                            android:textSize="@dimen/sp_12"
+                            android:textColor="@color/color_333" />
+
+                        <ImageView
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_margin="@dimen/dimens10"
+                            android:gravity="center"
+                            android:textSize="@dimen/sp_14"
+                            android:background="@mipmap/erweima"
+                            android:textColor="@color/color_333" />
+                    </LinearLayout>
+                </com.flyco.roundview.RoundLinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimens10"
+                    android:paddingLeft="@dimen/dimen_15"
+                    android:paddingRight="@dimen/dimen_15"
+                    android:paddingTop="@dimen/dimen6dp"
+                    android:text="  AI机器人导入"
+                    android:textSize="@dimen/sp_14"
+                    android:drawableLeft="@mipmap/zhankai"
+                    android:textColor="@color/color_lan" />
+
+                <com.flyco.roundview.RoundLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/dimen6dp"
+                    app:rv_backgroundColor="@color/white"
+                    app:rv_cornerRadius="18dp"
+                    app:rv_strokeColor="@color/white"
+                    android:layout_margin="@dimen/dimens10"
+                    app:rv_strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/tv_saoyisao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="@dimen/dimens10"
+                            android:text="扫一扫"
+                            android:paddingTop="@dimen/dimens10"
+                            android:paddingBottom="@dimen/dimens10"
+                            android:paddingRight="@dimen/dp_40"
+                            android:paddingLeft="@dimen/dp_40"
+                            android:textSize="@dimen/sp_12"
+                            android:onClick="@{(v)->presenterClick.onClick(v)}"
+
+                            android:background="@drawable/shape_login"
+                            android:textColor="@color/white" />
+
+                    </LinearLayout>
+                </com.flyco.roundview.RoundLinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</layout>

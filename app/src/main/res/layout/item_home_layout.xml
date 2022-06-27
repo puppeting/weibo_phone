@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_height="80dp">
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/sp_12"
+        android:paddingTop="@dimen/dimen6dp"
+        android:textColor="@color/color_333"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="急招木工，需要有制作床、柜子等家具经验，薪资可详细面谈。"
+        />
+    <TextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/color_666"
+        android:textSize="@dimen/dimen_10sp"
+        android:paddingRight="@dimen/dimen_8dp"
+         android:paddingBottom="6dp"
+        android:paddingTop="6dp"
+
+        android:text="2021-06-13"
+         />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/iv_imageview"
+        android:layout_width="90dp"
+        android:layout_height="60dp"
+         android:layout_margin="@dimen/dimen6dp"
+        />
+
+</LinearLayout>

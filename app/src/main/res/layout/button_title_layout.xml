@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+     android:layout_width="match_parent"
+    android:gravity="center"
+    android:background="#fff"
+    android:paddingTop="5dp"
+    android:layout_alignParentBottom="true"
+    android:layout_height="50dp">
+    <LinearLayout
+        android:id="@+id/linear_home"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <FrameLayout
+            android:id="@+id/fragLayout_home"
+            android:layout_width="@dimen/iconSize"
+            android:layout_height="@dimen/iconSize"
+
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/iv_button_home"
+                android:layout_gravity="center"
+                android:background="@mipmap/home_pre" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_button_home"
+            android:textSize="10sp"
+            android:text="首页"
+            android:layout_marginTop="2dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/colorzise" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear_order"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true">
+
+        <FrameLayout
+            android:layout_width="@dimen/iconSize"
+            android:layout_height="@dimen/iconSize"
+            android:layout_gravity="center">
+
+            <RelativeLayout
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_button_liaotian"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+
+                    android:background="@mipmap/live_no" />
+            </RelativeLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_button_liaotian"
+            android:textSize="10sp"
+            android:text="直播"
+            android:textColor="@color/color_333"
+            android:gravity="center"
+            android:layout_marginTop="2dp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear_suicai"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true">
+
+        <FrameLayout
+            android:layout_width="@dimen/iconSize"
+            android:layout_height="@dimen/iconSize"
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/iv_button_suicai"
+                android:background="@mipmap/suicai_no"
+                android:layout_gravity="center"
+
+                />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_button_sucai"
+            android:textSize="10sp"
+            android:text="素材库"
+            android:gravity="center"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/color_333" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear_mine"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true">
+
+        <FrameLayout
+            android:layout_width="@dimen/iconSize"
+            android:layout_height="@dimen/iconSize"
+
+            android:layout_gravity="center">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/iv_button_mine"
+                android:background="@mipmap/mine_no"
+                android:layout_gravity="center"
+                />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tv_button_mine"
+            android:textSize="10sp"
+            android:text="我的"
+            android:gravity="center"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/color_333" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.flyco.roundview.RoundLinearLayout
+        android:layout_width="500dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_45"
+        android:layout_marginBottom="@dimen/margin_45"
+        android:orientation="vertical"
+        app:rv_backgroundColor="@color/app_bg"
+        app:rv_isRippleEnable="false"
+        app:rv_cornerRadius="@dimen/dp_8">
+
+<!--        <androidx.fragment.app.FragmentContainerView-->
+<!--            android:id="@+id/nav_host_account_fragment"-->
+<!--            android:name="androidx.navigation.fragment.NavHostFragment"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            app:defaultNavHost="false"-->
+<!--            app:navGraph="@navigation/nav_graph_account" />-->
+    </com.flyco.roundview.RoundLinearLayout>
+</layout>
