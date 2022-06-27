@@ -25,6 +25,6 @@
 
 
     <include layout="@layout/content_main"  />
-    <include android:id="@+id/button" layout="@layout/button_title_layout"/>
+    <include android:id="@+id/button"  layout="@layout/button_title_layout"/>
 
 </LinearLayout>

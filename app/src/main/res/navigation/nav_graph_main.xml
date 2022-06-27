@@ -8,7 +8,9 @@
         android:id="@+id/navigation_main"
         android:name="com.pzbao.microphoto.ui.MainFragment"
         tools:layout="@layout/fragment_main">
-
+        <action
+            android:id="@+id/action_to_navActivity"
+            app:destination="@+id/navigation_navActivity" />
     </fragment>
 
 

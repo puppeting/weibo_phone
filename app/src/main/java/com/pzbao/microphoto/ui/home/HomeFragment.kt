@@ -22,6 +22,7 @@ import com.pzbao.microphoto.config.PresenterClick
 import com.pzbao.microphoto.databinding.FragmentHomeBinding
 import com.pzbao.microphoto.pop.*
 import com.pzbao.microphoto.ui.mine.AppStoreActivity
+import com.pzbao.microphoto.utils.IRouter
 import org.jetbrains.anko.support.v4.startActivity
 
 
@@ -134,8 +135,8 @@ class HomeFragment : Fragment() , PresenterClick {
             }
 
             R.id.tv_more2 ->{
-                 startActivity<SuiCaiActivity>()
-
+//                 startActivity<SuiCaiActivity>()
+                binding?.tvMore2?.let { IRouter.goF2(it,R.id.navigation_navActivity, Bundle()) }
             }
         }
     }

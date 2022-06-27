@@ -11,7 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MineActivity"
+            android:name=".ui.mine.MineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.NavActivity"
             android:exported="false" />
         <activity
             android:name=".ui.mine.SharedActivity"

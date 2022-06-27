@@ -34,7 +34,7 @@ object IRouter {
     fun goF2(view: View, @IdRes action: Int? = null, vararg bundle:Bundle) {
         val bundle = Bundle()
         val findNavController = Navigation.findNavController(view)
-//        when (action) {
+        when (action) {
 //            R.id.action_to_applyActivity -> {
 //                bean.forEachIndexed { index, any ->
 //                    when (index) {
@@ -57,7 +57,7 @@ object IRouter {
 //                }
 //            }
 
-//        }
+        }
         if (action != null) findNavController.navigate(action, bundle)
     }
 
